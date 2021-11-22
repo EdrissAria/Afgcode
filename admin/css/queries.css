@@ -1,0 +1,221 @@
+/* big tablet to big coputer : from 1024 to 1200px */
+@media only screen and (min-width: 1200px){
+    .dashboard li a:link,
+    .dashboard li a:visited{
+    font-size: 120%;
+    padding: 10px 10px;
+   }
+   table th{
+    font-size: 100%;
+    padding: 15px 5px;
+   }
+   form{
+    margin: 15% 5%;
+}
+
+}
+/* big tablet to 1200px (widths smaller than the 1140px row) */
+@media only screen and (max-width: 1200px){
+    .logo-place img{
+        width: 220px;
+        margin-top: 15px; 
+    }
+    .dashboard{
+        margin-left: 0;
+    }
+    .badge{
+        font-size: 60%;
+        margin-left: 20px;
+        padding: 3px 7px;
+    }
+    .dashboard li a:link,
+    .dashboard li a:visited{
+    font-size: 100%;
+    padding: 10px 10px;
+   }
+   table th{
+    font-size: 100%;
+    padding: 15px 5px;
+   }
+   table td{
+    font-size: 90%;
+    padding: 15px 5px;
+    }
+    table td img{
+        width: 60px; height:40px;
+    }
+    form{
+        margin: 20% 5%;
+    }
+    input[type=submit]{
+        width: 40%;
+    }
+
+}
+
+/* small tablet to big tablet : from 768 to 1023px */
+@media only screen and (max-width: 1023px){
+    .logo-place img{
+        width: 180px; 
+    }
+    .dashboard li a:link,
+    .dashboard li a:visited{
+    font-size: 100%;
+    padding: 10px 10px;
+    }
+    table{
+        width: 100%;
+        margin-left: 10px;
+        box-shadow: 2px 2px 20px lightgray, -2px -2px 5px lightgray;
+    }
+    table th{
+    font-size: 90%;
+    padding: 15px 3px;
+    }
+    table td{
+    font-size: 80%;
+    padding: 15px 3px;
+    }
+    table td img{
+        width: 50px; height:30px;
+    }
+    form{
+        margin: 20% 5%;
+    }
+    input[type=submit]{
+        width: 40%;
+    }
+    .login-form{
+        width: 60%;
+        margin: 10% 20%;
+    }
+    .edit-post{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .edit-que{
+        width: 90%;
+        margin: 0 auto;
+    }
+   
+    
+}
+/* small phone to small tablets : form 481px to 767px */
+@media only screen and (max-width: 767px){
+    .logo-place img{
+        width: 220px;
+        margin-top: 15px; 
+    }
+    .mobile-nav-icon2{
+        display: block;
+    }
+    .mobile-nav-icon{
+        display: block;
+    }
+    .col{
+        width: 100%;
+    }
+    .span-3-of-12{
+        display: none;
+        width: 300px !important;
+    }
+    form{
+        margin: 25% 5%;
+    }
+    input[type=submit]{
+        font-size: 100%;
+    }
+    input[type=submit]{
+        font-size: 100%;
+    }
+    input[type=file]{
+        width: 88%;
+    }
+    .login-form{
+        width: 80%;
+        margin: 10% 5%;
+    }
+    .edit-post{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .edit-que{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .comment-view{
+        width: 90%;
+        margin: 50px 5%;
+    }
+    .view-post{
+        width: 100%;
+        
+    }
+}
+/* small phones from 0 to 480px */
+@media only screen and (max-width: 480px){
+    *{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .logo-place img{
+        width: 220px; 
+    }
+    .col{
+        width: 100%;
+    }
+    .span-3-of-12{
+        display: none;
+        width: 300px !important;
+    }
+    form{
+        margin: 35% 0;
+        width: 100%;
+    }
+    form input[type=submit]{
+        font-size: 100%;
+        width: 200px;
+    }
+
+    #success{
+        width: 90%;
+        font-size: 100%;
+        margin: 20px 5%;
+    }
+    #danger{
+        width: 90%;
+        font-size: 100%;
+        margin: 10px 5%;
+    }
+    .login-form{
+        width: 70%;
+        margin: 10% auto;
+    }
+    header{
+        min-height: 50px;
+    }
+    .profile p{
+        font-size: 80%;
+    }
+    header img{
+        width: 10px;
+        height: 10px;
+    }
+    header h2{
+        margin-top: 40px;
+        font-size: 120%;
+    }
+    table{
+        width: 100%;
+        margin: 0;
+    }
+    table th{
+        font-size: 80%;
+    }
+    table td{
+        font-size: 70%;
+    }
+    .comment-header{
+        font-size: 120%;
+    }
+}

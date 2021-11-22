@@ -1,0 +1,338 @@
+/* big tablet to big coputer : from 1024 to 1200px */
+@media only screen and (min-width: 1200px){
+    .main-nav{
+        padding: 40px 25px 0 25px; 
+    }
+    
+    .main-nav li a:link,
+    .main-nav li a:visited{
+    font-size: 120%;
+    margin-right: 30px;
+    }
+    .blog-search{
+        width: 280px;
+        font-size: 120%; 
+    }
+    .main-nav button{
+        font-size: 120%; 
+    }
+    table tr td{
+        padding: 10px 200px 10px 10px;
+       
+    }
+    .link a{
+        width: 100%;
+        padding: 10px 90px;
+    }
+
+}
+/* big tablet to 1200px (widths smaller than the 1140px row) */
+@media only screen and (max-width: 1200px){
+    .main-nav{
+        padding: 30px 10px; 
+    }
+    .logo img{
+        width: 240px;
+        margin-top: 10px;
+    }
+    .main-nav li a:link,
+    .main-nav li a:visited{
+    font-size: 120%;
+    margin-right: 30px;
+    }
+    .blog-search{
+        width: 200px;
+        font-size: 110%;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 2px;
+        outline: none;
+    }
+    .main-nav button{
+        font-size: 110%;
+        
+    }
+    table tr td{
+        padding: 10px 150px 10px 10px;
+       
+    }
+    .link a{
+        width: 100%;
+        padding: 10px 60px;
+    }
+    .map{
+        background-image: url(img/map.jpg);
+        background-position: center;
+        background-size: 1200px 686px;
+    }
+    .read-more{
+        font-size: 90%;
+        padding: 10px 10px;
+    }
+}
+
+/* small tablet to big tablet : from 768 to 1023px */
+@media only screen and (max-width: 1023px){
+    .main-nav{
+        padding-top: 40px; 
+        padding-right: 10px; 
+        padding-left: 0; 
+        padding-bottom: 0;
+        margin: 0;
+    }
+    .logo img{
+        width: 170px;
+        margin-top: 20px;
+    }
+    .main-nav li a:link,
+    .main-nav li a:visited{
+    font-size: 120%;
+    margin-right: 3px;
+    }
+    .blog-search{
+        width: 170px;
+        font-size: 90%;
+    }
+    .main-nav button{
+        font-size: 90%;
+        
+    }
+    footer .row{
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    .footer-nav li{
+        margin-right: 20px;
+    }
+    .side{
+        width: 100%;
+    }
+    .question-field{
+        width: 60%;
+        margin: 30px auto;  
+    }
+    .finish{
+        font-size: 120%;
+       
+        padding: 10px 100px;
+       
+    }
+    .logout{
+        font-size: 120%;
+       
+        padding: 10px 100px;
+        
+    }
+    table tr td{
+        padding: 10px 100px 10px 10px;
+       
+    }
+    .link a{
+        width: 100%;
+        padding: 10px 40px;
+    }
+    .slide-menu input{
+        width: 280px;
+    }
+    .about{
+        width: 90%;
+        margin: 0 5% 200px 5%;
+    }
+    .read-more{
+        font-size: 80%;
+        padding: 10px 5px;
+    }
+    .well{
+        width: 600px;
+    }
+    .biography{
+        width: 60%;
+        margin: 30px auto;
+    }
+    .biography img{
+        width: 60%;
+    }
+
+}
+/* small phone to small tablets : form 481px to 767px */
+@media only screen and (max-width: 767px){
+    .main-nav{
+        display: none; 
+    }     
+    .mobile-nav-icon{
+        display: block;
+    }
+    .slide-out-menu{
+        display: none;
+    }
+    .banner input{
+        width: 400px;
+    }
+    .banner{
+        height: 80vh;
+    }
+    .col{
+        width: 100%;
+    }
+    .comment-form{
+     padding: 0;
+    }
+    .contact-card{
+        width: 100%;
+    }
+     
+    .span-1-of-2{
+        margin-left: 0;
+    }
+    .footer-nav li{
+        padding: 10px 10px;
+    }
+    .biography{
+        width: 80%;
+        margin: 140px 10% 0 10%; 
+    }
+    .question-field{
+        width: 80%;
+        margin: 30px auto;  
+    }
+    .finish{
+        font-size: 120%;
+       
+        padding: 10px 50px;
+       
+    }
+    .logout{
+        font-size: 120%;
+       
+        padding: 10px 50px;
+        
+    }
+    table tr td{
+        padding: 10px 50px 10px 10px;
+       
+    }
+    .center{
+        width: 80%;
+        margin: 20px 10%;
+       
+    }
+    .link a{
+        width: 100%;
+        padding: 10px 20px;
+    }
+    .slide-menu input{
+        width: 250px;
+    }
+    .social-media li a:link,
+    .social-media li a:visited{
+        font-size: 180%;
+        padding: 20px 20px;
+    }
+    .read-more{
+        font-size: 50%;
+        padding: 10px 5px;
+    }
+    .well{
+        width: 400px;
+    }
+
+ 
+}
+
+
+/* small phones from 0 to 480px */
+@media only screen and (max-width: 480px){
+    .banner input{
+        width: 300px;
+    }
+    .footer-nav li{
+        padding: 10px 5px;
+    }
+    .social-footer li{
+        padding: 10px 20px;
+    }
+    .finish{
+        font-size: 120%;
+       
+        padding: 10px 20px;
+       
+    }
+    .logout{
+        font-size: 120%;
+       
+        padding: 10px 20px;
+        
+    }
+    table tr td{
+        padding: 10px 20px 10px 10px;
+       
+    }
+    .center{
+        width: 90%;
+        margin: 20px 5%;  
+    }
+    .link a{
+        width: 100%;
+        padding: 10px 5px;
+        margin: 10px 4px;
+    }
+    .slide-menu input{
+        width: 230px;
+    }
+    .social-media li a:link,
+    .social-media li a:visited{
+        font-size: 150%;
+        padding: 20px 10px;
+    }
+    .banner input{
+        width: 200px;
+    }
+    .about h2 a:link,
+    .about h2 a:visited{
+    text-decoration: none;
+    font-size: 120%;
+    color: rgb(187, 187, 187);
+    }
+    .well{
+        width: 100px;
+    }
+    section .title{
+    font-size: 120%;
+    }
+    .biography img{
+        width: 40%;
+    }
+    .header h3{
+        font-size: 120%;
+    }
+    .description h6{
+    font-size: 80%;
+    }
+    .description h5{
+    font-size: 90%;
+    }
+    .comment p{
+    font-size: 100%;
+    }
+    .comment h5{
+    font-size: 130%;
+    }
+    .comment-form input[type=submit]{
+        width: 200px;
+        border-radius: 2px;
+    }
+    .contact-card p{
+        font-size: 120%;
+    }
+    #success{
+    font-size: 100%;
+    padding: 10px 0;
+    margin-top: 10px;
+    }
+    #danger{
+    font-size: 100%;
+    margin-top: 10px;
+    padding: 10px 0;
+    }
+}

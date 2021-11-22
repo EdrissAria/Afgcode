@@ -1,0 +1,646 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 20px;
+    font-weight: 300;
+    font-family: 'calibri','Arial Narrow', sans-serif; 
+    background-color: white;
+}
+/*---------------------------------------------------------------------------------------------------------*/
+/* HEADER */
+/*---------------------------------------------------------------------------------------------------------*/
+header{
+    width: 100%;
+    min-height: 100px;
+    background-color: lightgray;
+    color: lightgray;
+    position: fixed;
+    padding: 0;
+    z-index: 1000;
+}
+.ion-ios-close-empty{
+    font-size: 140%;
+}
+.mobile-nav-icon{
+    font-size: 200%;
+    color: rgb(95, 95, 95);
+    float: left;
+    list-style: none;
+    padding: 30px 0 0 40px;
+    display: none;
+    cursor: pointer;
+}
+.mobile-nav-icon2{
+    font-size: 200%;
+    color: rgb(197, 197, 197);
+    float: right;
+    margin: 25px 20px 0 0;
+    cursor: pointer;
+    display: none;
+}
+.profile{
+    float: right;
+    text-align: center;
+}
+
+.profile img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid darkgray;
+}
+.profile p{
+    font-size: 100%;
+    color: #009688;
+    font-weight: bold;
+}
+header h2{
+    font-size: 200%;
+    color: orangered;
+    margin-top: 25px;
+    text-align: center;
+}
+/*---------------------------------------------------------------------------------------------------------*/
+/* NAV */
+/*---------------------------------------------------------------------------------------------------------*/
+.span-3-of-12{
+    min-height: 60em;
+    background-color: rgb(48, 48, 48);
+    margin: 0;
+    transition: 0.5s;
+}
+nav .logo-place{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(48, 48, 48);
+}
+
+.logo{
+    display: inline;
+}
+.logo-place img{
+    width: 280px;
+}
+.dashboard{
+    list-style: none;
+    margin-left: 60px;
+}
+.badge{
+    font-size: 70%;
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 2px 7px;
+    border-radius: 2px;
+    color: rgb(48, 48, 48);
+    background-color: rgb(224, 202, 0);
+}
+.dashboard li a:link,
+.dashboard li a:visited{
+    text-decoration: none;
+    display: block;
+    font-size: 120%;
+    padding: 10px 20px;
+    color: rgb(211, 211, 211);
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+.active{
+    background-color: orangered;
+    opacity: 0.9;
+    border: 1px solid rgb(211, 211, 211);
+    border-right: 0;
+}
+.dashboard li a:hover,
+.dashboard li a:active{
+    background-color: orangered;
+    opacity: 0.9;
+}
+/*---------------------------------------------------------------------------------------------------------*/
+/* MAIN AREA */
+/*---------------------------------------------------------------------------------------------------------*/
+.span-9-of-12{
+    margin: 0;
+}
+.mainArea{
+    padding: 10px;
+}
+ 
+ 
+.badge-unapprove{
+    font-size: 80%;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 2px;
+    color: rgb(48, 48, 48);
+    background-color: rgba(230, 8, 0, 0.952);
+    float: left;
+}
+.badge-approve{
+    font-size: 80%;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 2px;
+    color: rgb(48, 48, 48);
+    background-color: rgba(57, 180, 0, 0.932);
+    float: right;
+}
+/*---------------------------------------------------------------------------------------------------------*/
+/* POSTS FORM */
+/*---------------------------------------------------------------------------------------------------------*/
+form{
+    width: 90%;
+    margin: 12% 5%;
+    background-color:  white;
+    padding: 30px 0 30px 20px;
+    border: 1px solid lightgray;
+    -webkit-box-shadow: 2px 2px 20px lightgray, -2px -2px 20px lightgray;
+    -moz-box-shadow: 2px 2px 20px lightgray, -2px -2px 20px lightgray;
+    -ms-box-shadow: 2px 2px 20px lightgray, -2px -2px 20px lightgray;
+    -o-box-shadow: 2px 2px 20px lightgray, -2px -2px 20px lightgray;
+}
+
+label{
+    display: block;
+    font-size: 120%;
+    margin-top: 10px;
+    color: rgba(255, 68, 0, 0.856);
+}
+.image-header img{
+    width: 98%;
+}
+.edit-post{
+    width: 60%;
+    margin: 0 auto;
+}
+.edit-que{
+    width: 80%;
+    margin: 0 10%;
+}
+.comment-header{
+    width: 90%;
+    margin: 120px auto 20px auto;
+    font-size: 200%;
+    font-weight: 100;
+    padding: 10px 20px;
+    color: orangered;
+}
+.view-post{
+    width: 80%;
+    margin: 0 auto;
+}
+input[type=text]{
+    width: 90%;
+    font-size: 120%;
+    padding: 10px;
+    outline: none;
+    border: 2px solid rgb(119, 119, 119);
+    color: rgb(48, 48, 48);
+}
+select{
+    width: 90%;
+    padding: 10px;
+    font-size: 110%;
+    outline: none;
+    border: 2px solid rgb(119, 119, 119);
+    color: rgb(119, 119, 119);
+}
+select option{
+    color: rgba(255, 68, 0, 0.7);
+    background-color: rgb(48, 48, 48);
+}
+input[type=file]{
+    width: 90%;
+    padding: 1% 5%; 
+    font-size: 120%;
+    color: rgba(255, 68, 0, 0.7);
+    background-color: rgb(48, 48, 48);
+    outline: none;
+    margin-top: 20px;
+}
+textarea{
+    width: 92%;
+    font-size: 120%;
+    padding: 10px;
+    outline: none;
+    border: 2px solid rgb(119, 119, 119);
+    color: rgb(48, 48, 48);
+}
+input[type=submit]{
+    width: 20%;
+    font-size: 120%;
+    margin-top: 10px;
+    padding: 10px 4px;
+    color: rgb(48, 48, 48);
+    background-color: rgba(255, 68, 0, 0.9);
+    border: none;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    outline: none;
+}
+input[type=submit]:hover{
+    background-color: orange;
+}
+input[type=password]{
+    width: 90%;
+    font-size: 120%;
+    padding: 10px;
+    outline: none;
+    border: 2px solid rgb(119, 119, 119);
+    color: rgb(48, 48, 48);
+}
+ 
+/*---------------------------------------------------------------------------------------------------------*/
+/* ALERT */
+/*---------------------------------------------------------------------------------------------------------*/
+#success{
+    width: 90%;
+    text-align: center;
+    font-size: 120%;
+    border-radius: 2px;
+    margin: 20px auto;
+    color: white;
+    background-color: rgba(77, 211, 0, 0.6);
+    padding: 15px 0;
+}
+
+#danger{
+    width: 90%;
+    text-align: center;
+    font-size: 120%;
+    border-radius: 2px;
+    margin: 20px auto;
+    color: white;
+    background-color: rgba(245, 0, 0, 0.6);
+    padding: 15px 0;
+}
+.error{
+    text-align: center;
+}
+.failed{
+    font-size: 120%;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: rgba(255,0,0,0.7);
+    margin: auto;
+}
+/*---------------------------------------------------------------------------------------------------------*/
+/* FOOTER */
+/*---------------------------------------------------------------------------------------------------------*/
+footer{
+    width: 100%;
+    height: auto;
+    background-color: rgb(48, 48, 48);
+    margin: 0;
+}
+footer .row{
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+footer .footer-nav{
+    list-style: none;
+    float: left;
+}
+.footer-nav li{
+    display: inline-block;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+.footer-nav li a:link,
+.footer-nav li a:visited{
+    text-decoration: none;
+    font-size: 100%;
+    color: darkgray; 
+}
+footer .social-footer{
+    list-style: none;
+    float: right;
+}
+.social-footer li{
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+.social-footer li a:link,
+.social-footer li a:visited{
+    text-decoration: none;
+    font-size: 100%;
+    color: darkgray; 
+}
+.ion-social-facebook:hover{
+    color: steelblue;
+}
+.ion-social-twitter:hover{
+    color: darkturquoise;
+}
+.ion-social-whatsapp:hover{
+    color: rgb(90, 224, 0);
+}
+.ion-social-instagram:hover{
+    color: lightcoral;
+}
+
+footer p{
+    text-align: center;
+    color: darkgray;
+    font-size: 100%;
+    margin-top: 10px;
+}
+/*---------------------------------------------------------------------------------------------------------*/
+/* Cards */
+/*---------------------------------------------------------------------------------------------------------*/
+.card{
+    width: 40%;
+    margin: 0 auto;
+    color: white;
+}
+.card-view{
+    width: 100%;
+    margin: 100px auto;
+    color: rgb(99, 99, 99);
+    background-color: rgb(218, 218, 218);
+}
+/*---------------------------------------------------------------------------------------------------------*/
+/* MAIN AREA */
+/*---------------------------------------------------------------------------------------------------------*/
+.main-area{
+    width: 90%;
+    margin: 135px 5% 0 5%;
+    padding: 30px 2%;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 2px 2px 20px lightgray, -2px -2px 20px lightgray;
+}
+.main-area h2{
+    color: rgb(116, 116, 116);
+    font-size: 120%;
+    font-family: 'Calibri';
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(233, 233, 233);
+}
+.main-area p{
+    font-size: 95%;
+    line-height: 30px;
+    color: rgb(70, 70, 70);
+    margin-bottom: 30px;
+}
+.main-area img{
+    width: 100%;
+}
+/*---------------------------------------------------------------------------------------------------------*/
+/*COMMENTS*/
+/*---------------------------------------------------------------------------------------------------------*/
+.comment{
+    width: 80%;
+    margin: 5% 10%;
+    padding: 20px 0 20px 50px;
+    background-color: white;
+    border-radius: 2px;
+}
+.comment img{
+    float: left;
+    padding-bottom: 2px;
+    width: 50px;
+    height: 50px;
+}
+.comment p{
+    padding: 10px 0 0 10px;
+    font-size: 120%;
+    color: rgb(71, 71, 71);
+}
+.comment h5{
+    font-size: 140%;
+    font-weight: 100;
+    color: rgba(255, 68, 0, 0.7);
+}
+.comment input{
+    padding: 10px 0 10px 0;
+}
+.comment-view{
+    width: 80%;
+    padding: 20px 0 20px 20px;
+    margin: 50px 10%;
+    font-size: 120%;
+    background-color: rgb(226, 225, 225);
+}
+.comment-view h5{
+    font-size: 120%;
+    color: orangered;
+}
+.comment-view p{
+    font-size: 110%;
+    color: rgb(119, 119, 119);
+}
+/*---------------------------------------------------------------------------------------------------------*/
+/* ICONS */
+/*---------------------------------------------------------------------------------------------------------*/
+td i{
+    font-size: 120%;
+    -ms-transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+}
+.ion-ios-eye{
+    font-size: 140%;
+}
+.ion-ios-eye:hover{
+    color: rgb(36, 208, 214);
+}
+.ion-android-delete:hover{
+    color: rgb(233, 16, 16);
+}
+.ion-edit:hover{
+    color: rgb(32, 216, 72);
+}
+
+
+/*---------------------------------------------------------------------------------------------------------*/
+/* QUESTIONS */
+/*---------------------------------------------------------------------------------------------------------*/
+.center{
+    width: 80%;
+    margin: 0 20%;
+}
+.quebar{
+    width: 80%;
+    padding: 30px 20px;
+    margin: 30px auto;
+    background-color: darkgray;
+    color: rgb(49, 49, 49);
+    border-radius: 3px;
+}
+.id{
+    color: rgb(216, 216, 70);
+    background: rgb(48, 49, 46);
+    border-radius: 2px;
+    padding: 1px 3px;
+}
+.quebar p{
+    font-size: 120%;
+    color: rgb(49, 49, 49);
+    margin: 20px 0;
+}
+.option{
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px 10px;
+    font-size: 100%;
+    background-color: rgb(202, 202, 202);
+    color: rgb(49, 49, 49);
+    border-radius: 5px;
+}
+.cat{
+    color: #009488;
+}
+.label{
+    font-size: 110%;
+    margin: 5px 25px;
+    color: rgba(255, 68, 0, 0.911);
+}
+.answer{
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px 10px;
+    font-size: 100%;
+    background-color: rgb(202, 202, 202);
+    color: rgb(49, 49, 49);
+    border-radius: 5px;
+    text-align: center;
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+/* TABLES */
+/*---------------------------------------------------------------------------------------------------------*/
+table{
+    width: 90%;
+    margin: 0 5%;
+    box-shadow: 2px 2px 20px lightgray, -2px -2px 20px lightgray;
+    -webkit-box-shadow: 2px 2px 20px lightgray, -2px -2px 20px lightgray;
+    -moz-box-shadow: 2px 2px 20px lightgray, -2px -2px 20px lightgray;
+    -ms-box-shadow: 2px 2px 20px lightgray, -2px -2px 20px lightgray;
+    -o-box-shadow: 2px 2px 20px lightgray, -2px -2px 20px lightgray;
+}
+table thead{
+    color: rgb(65, 65, 65);
+    background-color: #009688;
+}
+table th{
+    font-size: 120%;
+    padding: 15px 10px;
+}
+table tbody{
+    color: rgb(65, 65, 65);
+    background-color: white;
+}
+table tr{
+    transition: 0.4s;
+    text-align: center;
+}
+table tr:nth-child(even){
+    background-color: aliceblue;
+}
+table tbody tr:hover{
+    background-color: rgb(208, 233, 255);
+}
+table td{
+    font-size: 100%;
+    padding: 15px 10px;
+}
+table td img{
+    width: 100px; height:40px;
+}
+.dashboard-table{
+    margin-top: 120px;
+}
+table a:link,
+table a:visited{
+    text-decoration: none;
+    color: rgb(65, 65, 65);
+    font-weight: bold;
+    font-size: 120%;
+}
+/*---------------------------------------------------------------------------------------------------------*/
+/* LOGIN FORM */
+/*---------------------------------------------------------------------------------------------------------*/
+.login-form{
+    width: 30%;
+    margin: 10% 35%;
+    padding: 30px 40px 30px 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: none;
+}
+.login-form input[type=text],
+.login-form input[type=password]{
+    width: 100%;
+    padding: 10px 0 10px 10px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 10px gray, -2px -2px 10px gray;
+}
+.login-form label{
+    color: #009688;
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.login-form input[type=submit]{
+    width: 103%;
+    background-color: #009688;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+    border-radius: 2px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px gray, -2px -2px 5px gray;
+    -webkit-box-shadow: 2px 2px 5px darkgray, -2px -2px 5px darkgray;
+    -moz-box-shadow: 2px 2px 5px darkgray, -2px -2px 5px darkgray;
+    -ms-box-shadow: 2px 2px 5px darkgray, -2px -2px 5px darkgray;
+    -o-box-shadow: 2px 2px 5px darkgray, -2px -2px 5px darkgray;
+    outline: none;
+}
+.login-form input[type=submit]:hover{
+     opacity: 0.7;
+}
+.well{
+    max-width: 800px;
+    border-left: 5px solid #009488;
+    background-color: rgb(231, 231, 231);
+    margin-top: 0;
+    margin-left: 10px;
+    padding: 0 0 10px 10px;
+}
+.back{
+    margin: 100px 100px;
+}
+.back a{
+    text-decoration: none;
+    font-size: 120%;
+    color: white;
+    padding: 10px 10px;
+    background-color: yellow;
+}
+
+/*---------------------------------------------------------------------------------------------------------*/
+/* ANIMATIONS */
+/*---------------------------------------------------------------------------------------------------------*/
+.tag{
+    text-decoration: none;
+    color: white;
+    font-size: 100%;
+    padding: 5px 15px;
+    margin: 20px;
+    background-color: rgb(212, 212, 212);
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.animated.pulse{
+    animation-duration: 0.5s;
+}
