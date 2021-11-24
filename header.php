@@ -1,7 +1,32 @@
+<?php
+
+$page = $_SERVER['PHP_SELF'];
+$title; 
+switch($page){
+    case '/afgcode/blog.php':
+        $page = 'blog';
+        $title = 'blog';
+        break;
+    case '/afgcode/contact.php':
+        $page = 'contact';
+        $title = 'contact';
+        break;
+    case '/afgcode/about.php':
+        $page = 'about';
+        $title = 'about';
+        break;
+    default:
+        $page = '/';
+        $title = 'home';
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><?php echo $title;?></title>   
         <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
@@ -19,7 +44,7 @@
                        <li><a href="index.php">Home</a></li>
                        <li><a href="blog.php">Blog</a></li>
                        <li><a href="contact.php">Contact</a></li>
-                       <li><a href="about.php" id="active">About</a></li>
+                       <li><a href="about.php">About</a></li>
                        <li>
                             <form method="post">
                                 <input type="text" name="search" placeholder="Search here" class="blog-search" required><button name="searchbtn"><i class="ion-search"></i></button>
@@ -36,7 +61,7 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="blog.php">Blog</a></li>
                     <li><a href="Contact.php">Contact</a></li>
-                    <li><a href="about.php" id="active">About</a></li>
+                    <li><a href="about.php">About</a></li>
                     <li> 
                     <form method="post">
                         <input type="text" name="search" placeholder="Search here" required><button name="searchbtn"><i class="ion-search"></i></button>

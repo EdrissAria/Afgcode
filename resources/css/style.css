@@ -65,8 +65,7 @@ header h1 a:hover{
     padding: 10px 10px;
     transition: 0.4s;
 }
-.main-nav li a:hover,
-.main-nav li a:active{
+.main-nav li a:hover{
     color: rgba(255, 68, 0, 0.9);
 }
 #active{
