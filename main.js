@@ -1,3 +1,4 @@
+// for apearing slide out menu 
 const slide = document.getElementById("slide-out-menu");
     const out = document.getElementById("out");
     slide.addEventListener('click', function(){
@@ -7,7 +8,7 @@ const slide = document.getElementById("slide-out-menu");
             out.style.display = "block";
         }
 })
-
+// for navigation into active links 
 function navigation(){
     let current_location = location.pathname.split('/')[2];
     let menu_items = document.querySelector("header").getElementsByTagName("a");
@@ -22,3 +23,9 @@ function navigation(){
     }
 }
 navigation();
+
+// for focusing into comment input by clickin on reply button
+
+function focusInput(){
+    document.getElementById('c_name').focus();
+}

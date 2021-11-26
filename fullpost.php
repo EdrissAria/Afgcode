@@ -94,10 +94,9 @@ if(empty($username) || empty($email) || empty($comment)){
                                     <h5><span><img src="image/users.png"></span><?= $username;?></h5>
                                     <p><?php echo $comment; ?></p>
                                     <br>
-                                    <form method="post">
-                                    <button name="reply">Reply&nbsp;<span><i class="ion-reply"></span></i></button>
-                                    </form><br>
-                                    <h6><?echo echo $DateTime; ?></h6>
+                                    <button name="reply" onclick="focusInput()">Reply&nbsp;<span><i class="ion-reply"></span></i></button>
+                                    <br>
+                                    <h6><?echo $DateTime; ?></h6>
                                 </div>
                                 <?php }
                                }?>
@@ -121,9 +120,8 @@ if(empty($username) || empty($email) || empty($comment)){
                                     <?php endif; ?>
                                 <form method="post">
                                     <div class="row">
-                                        <label for="name">Username</label>
-                                        <input type="text" name="username" placeholder="Your name" id="name">
-                                    
+                                        <label for="c_name">Username</label>
+                                        <input type="text" name="username" placeholder="Your name" id="c_name">
                                         <label for="email">E-mail</label>
                                         <input type="text" name="email" placeholder="Your email" id="email">
                                     </div>
