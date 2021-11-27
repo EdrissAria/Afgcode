@@ -1,6 +1,6 @@
 <?php
-if(isset($_POST["searchbtn"])){
-    $search = $_POST["search"];
+if(isset($_GET["search"])){
+    $search = $_GET["search"];
     header("location: blog.php?search=$search");
 }
 ?>
@@ -39,8 +39,8 @@ if(isset($_POST["searchbtn"])){
                 <li><a href="Contact.php">Contact</a></li>
                 <li><a href="about.php">About</a></li>
                 <li> 
-                <form method="post">
-                    <input type="text" name="search" placeholder="Search here" required><button name="searchbtn"><i class="ion-search"></i></button>
+                <form>
+                    <input type="text" name="search" placeholder="Search here" required><button><i class="ion-search"></i></button>
                 </form>
                 </li>
             </ul>
@@ -50,8 +50,8 @@ if(isset($_POST["searchbtn"])){
             <div class="banner">
                 <h1><span style="color: orangered">&lt;</span>AfgCode<span style="color: orangered">/&gt;</span></h1>
                 <div class="form">
-                <form method="post">
-                <input type="text" name="search" placeholder="Search here" required><button name="searchbtn"><i class="ion-search"></i></button>
+                <form>
+                <input type="text" name="search" placeholder="Search here" required><button><i class="ion-search"></i></button>
                 </form>
                 </div>
             </div>

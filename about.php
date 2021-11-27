@@ -1,6 +1,6 @@
 <?php
-if(isset($_POST["searchbtn"])){
-    $search = $_POST["search"];
+if(isset($_GET["search"])){
+    $search = $_GET["search"];
     header("location: blog.php?search=$search");
 }
 ?>

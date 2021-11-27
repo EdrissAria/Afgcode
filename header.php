@@ -21,8 +21,8 @@
                        <li><a href="contact.php">Contact</a></li>
                        <li><a href="about.php">About</a></li>
                        <li>
-                            <form method="post">
-                                <input type="text" name="search" placeholder="Search here" class="blog-search" required><button name="searchbtn"><i class="ion-search"></i></button>
+                            <form>
+                                <input type="text" name="search" placeholder="Search here" class="blog-search" required><button><i class="ion-search"></i></button>
                             </form>
                        </li>
                    </ul>
@@ -38,8 +38,8 @@
                     <li><a href="Contact.php">Contact</a></li>
                     <li><a href="about.php">About</a></li>
                     <li> 
-                    <form method="post">
-                        <input type="text" name="search" placeholder="Search here" required><button name="searchbtn"><i class="ion-search"></i></button>
+                    <form>
+                        <input type="text" name="search" placeholder="Search here" required><button><i class="ion-search"></i></button>
                     </form>
                     </li>
                 </ul>

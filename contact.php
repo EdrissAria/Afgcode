@@ -2,8 +2,8 @@
 require_once("include/database.php");
 require_once("include/datetime.php");
 
-if(isset($_POST["searchbtn"])){
-    $search = $_POST["search"];
+if(isset($_GET["search"])){
+    $search = $_GET["search"];
     header("location: blog.php?search=$search");
 }
 elseif(isset($_POST["submit"])){
