@@ -16,7 +16,8 @@ require_once("include/datetime.php");
                           $showPosts = mysqli_query($link, $query);}
                     }else{
                         $query = "SELECT * FROM posts order by pid desc;";
-                        $showPosts = mysqli_query($link, $query);}
+                        $showPosts = mysqli_query($link, $query);
+                    }
                         while($row = mysqli_fetch_assoc($showPosts)){
                             $postid = $row["pid"];
                             $title = $row["title"];

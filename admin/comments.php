@@ -77,9 +77,8 @@ $photo = $showPrivilage["photo"];
                             $viewComment = mysqli_query($link,$command);
                             $SrNo = 0;
                             while($rows = mysqli_fetch_assoc($viewComment)){
-                                $id = $rows["pid"];
+                                $id = $rows["cid"];
                                 $title = $rows["title"];
-                                $postId = $rows["cid"];
                                 $DateTime = $rows["createAt"];
                                 $username = $rows["username"];
                                 $email = $rows["email"];
@@ -99,7 +98,7 @@ $photo = $showPrivilage["photo"];
 
                                     <td><a href="DeleteComment.php?id=<?php echo $id;?>" id="delete">Delete</a></td>
                                      
-                                    <td><a href="viewComment.php?id=<?php echo $postId ;?>" id="view">View</a></td>
+                                    <td><a href="viewComment.php?id=<?php echo $id ;?>" id="view">View</a></td>
                                     
                                 </tr>
                             <?php }?>

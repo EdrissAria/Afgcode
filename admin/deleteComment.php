@@ -11,7 +11,7 @@ if($position != "Adminstrator"){
     header("location: comments.php?permission=failed");
 }
 else{
-$deleteComment = mysqli_query($link, "DELETE FROM comments WHERE pid = $id;");
+$deleteComment = mysqli_query($link, "DELETE FROM comments WHERE cid = $id;");
 if($deleteComment){
     header("location: comments.php?deleteco=success");
 }else{

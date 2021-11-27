@@ -25,7 +25,6 @@ function navigation(){
 navigation();
 
 // for focusing into comment input by clickin on reply button
-
 function focusInput(){
     document.getElementById('c_name').focus();
 }

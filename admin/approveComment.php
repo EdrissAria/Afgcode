@@ -11,7 +11,7 @@ if($position != "Adminstrator"){
     header("location: comments.php?permission=failed");
 }
 else{
-$aproveComment = mysqli_query($link, "UPDATE comments SET status = 'ON' WHERE pid = $id;");
+$aproveComment = mysqli_query($link, "UPDATE comments SET status = 'ON' WHERE cid = $id;");
 if($aproveComment){
     header("location: comments.php?aprove=success");
 }else{

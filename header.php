@@ -1,32 +1,7 @@
-<?php
-
-$page = $_SERVER['PHP_SELF'];
-$title; 
-switch($page){
-    case '/afgcode/blog.php':
-        $page = 'blog';
-        $title = 'blog';
-        break;
-    case '/afgcode/contact.php':
-        $page = 'contact';
-        $title = 'contact';
-        break;
-    case '/afgcode/about.php':
-        $page = 'about';
-        $title = 'about';
-        break;
-    default:
-        $page = '/';
-        $title = 'home';
-}
-
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title><?php echo $title;?></title>   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         <link rel="stylesheet" type="text/css" href="vendors/css/normalize.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
         <link rel="stylesheet" type="text/css" href="vendors/css/ionicons.min.css">
