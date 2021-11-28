@@ -5,7 +5,6 @@ require_once("include/datetime.php");
 $id = $_GET["id"];
 if(isset($_GET["search"])){
     $search = $_GET["search"];
-
     header("location: blog.php?search=$search");
 }   
 elseif(isset($_POST["username"])){                    

@@ -13,7 +13,8 @@ require_once("include/datetime.php");
                           $search = $_GET["search"];
                           if($search != ""){
                           $query = "SELECT * FROM posts where createAt LIKE '%$search%' OR title LIKE '%$search%' OR post LIKE '%$search%' OR catagory LIKE '%$search%' ORDER BY pid desc;";
-                          $showPosts = mysqli_query($link, $query);}
+                          $showPosts = mysqli_query($link, $query);
+                         }
                     }else{
                         $query = "SELECT * FROM posts order by pid desc;";
                         $showPosts = mysqli_query($link, $query);
