@@ -12,11 +12,14 @@ const slide = document.getElementById("slide-out-menu");
 function navigation(){
     let current_location = location.pathname.split('/')[2];
     let menu_items = document.querySelector("header").getElementsByTagName("a");
-    let slide_out = document.querySelector(".slide-out-menu").getElementsByTagName("a");
     for (let i = 0, len = menu_items.length; i < len; i++) {
         if (menu_items[i].getAttribute("href") == current_location) {
           menu_items[i].setAttribute('id', 'active');
         }
+    }
+    
+    let slide_out = document.querySelector(".slide-out-menu").getElementsByTagName("a");
+    for (let i = 0, len = slide_out.length; i < len; i++) {
         if (slide_out[i].getAttribute("href") == current_location) {
           slide_out[i].setAttribute('id', 'active');
         }
