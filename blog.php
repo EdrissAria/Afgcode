@@ -19,6 +19,7 @@ require_once("include/datetime.php");
                         $query = "SELECT * FROM posts order by pid desc;";
                         $showPosts = mysqli_query($link, $query);
                     }
+                    if(mysqli_num_rows($showPosts)>0){
                         while($row = mysqli_fetch_assoc($showPosts)){
                             $postid = $row["pid"];
                             $title = $row["title"];
@@ -26,17 +27,22 @@ require_once("include/datetime.php");
                             $image = $row["image"];
                         ?>
                         <!----- main area ----->
-                    <div class="main-area">
-                        <div class="row">
-                            <img src="<?php echo "upload/".$image;?>">
-                                <h2><?=$title;?></h2>
-                                    <p>
-                                     <?php if(strlen($post)>180){ echo substr($post,0, 180)."...";}else{ echo $post;}?>
-                                   </p>
-                            <a href="fullpost.php?id=<?=$postid;?>" class="read-more">READ MORE &rArr;</a>
-                        </div>     
-                    </div>
+                        <div class="main-area">
+                            <div class="row">
+                                <img src="<?php echo "upload/".$image;?>">
+                                    <h2><?php echo $title;?></h2>
+                                        <p>
+                                        <?php if(strlen($post)>180){ echo substr($post,0, 180)."...";}else{ echo $post;}?>
+                                        </p>
+                                <a href="fullpost.php?id=<?php echo $postid;?>" class="read-more">READ MORE &rArr;</a>
+                            </div>     
+                        </div>
                     <?php }
+                    }else{
+                        echo "<div style='color: coral; font-size: 30pt; margin-top: 140px; text-align: center'>
+                        No result for <strong>{$_GET['search']}</strong>
+                        </div>";
+                    }
                         ?>
                 </div><!---ending of main area--->
                 <!----- main side ----->

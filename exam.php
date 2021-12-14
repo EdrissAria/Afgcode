@@ -1,9 +1,9 @@
- <?php
-session_start();
+<?php
+session_start(); 
 require_once("include/database.php");
 require_once("include/datetime.php");
 $cat = $_GET["catagory"];
-$_SESSION["quiz_result"] = 0;
+ 
 ?>
 <!DOCTYPE html> 
 <html>
@@ -44,67 +44,45 @@ $_SESSION["quiz_result"] = 0;
                         <?=$question;?>
                     </div>
                     <div class="option" id="option"><label for="<?=$option1;?>"><?=$option1;?></label>
-                    <input type="radio" name="<?=$id;?>" value="<?=$option1;?>" id="<?=$option1;?>"></div>
+                    <input type="radio" name="<?=$id;?>" value="<?=$option1;?>" id="<?=$option1;?>"
+                    onclick="save_opt(this.value,<?php echo $id; ?>)"
+                    ></div>
                     <div class="option" id="option"><label for="<?=$option2;?>"><?=$option2;?></label>
-                    <input type="radio" name="<?=$id;?>" value="<?=$option2;?>" id="<?=$option2;?>"></div>
+                    <input type="radio" name="<?=$id;?>" value="<?=$option2;?>" id="<?=$option2;?>"
+                    onclick="save_opt(this.value,<?php echo $id; ?>)"
+                    ></div>
                     <div class="option" id="option"><label for="<?=$option3;?>"><?=$option3;?></label>
-                    <input type="radio" name="<?=$id;?>" value="<?=$option3;?>" id="<?=$option3;?>"></div>
+                    <input type="radio" name="<?=$id;?>" value="<?=$option3;?>" id="<?=$option3;?>"
+                    onclick="save_opt(this.value,<?php echo $id; ?>)"
+                    ></div>
                     <div class="option" id="option"><label for="<?=$option4;?>"><?=$option4;?></label>
-                    <input type="radio" name="<?=$id;?>" value="<?=$option4;?>" id="<?=$option4;?>"></div>
-                    <?php
-                    if(isset($_POST["$id"])){
-                        if($_POST["$id"] === $answer){
-                            $_SESSION["quiz_result"] = $_SESSION["quiz_result"] + 1;
-                        }
-                    }
-                    ?>
+                    <input type="radio" name="<?=$id;?>" value="<?=$option4;?>" id="<?=$option4;?>"
+                    onclick="save_opt(this.value,<?php echo $id; ?>)"
+                    ></div>
+                   
                 </div>
                 <?php
                     }
                 ?>
                 <center>
                 <a href="blog.php" class="logout">&lArr;Log out</a>
-                <input type="submit" name="submit" value="Finish &rArr;" class="finish">
+                <a href="result.php?catagory=<?php echo $cat ?>" class="finish">Finish &rArr;</a>
                 </center>
-                <?php
-                    if(isset($_POST["submit"])){
-                        ?>
-                            <script type="text/javascript">
-                                window.location = "result.php?catagory=<?php echo $catagoryQuestions;?>";
-                            </script>
-                        <?php
-                    }
-
-                ?>            
-                        
+                           
              </form>  
+             <?php echo $_SESSION['score']; ?>
             </div>
           </div>
          </div> 
          <!----- main footer ----->
-         <footer>
-            <div class="row">
-                <div class="col span-1-of-2">
-                    <ul class="footer-nav">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">About</a></li>
-                    </ul>
-                </div>
-                <div class="col span-1-of-2">
-                    <ul class="social-footer">
-                        <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                        <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                        <li><a href="#"><i class="ion-social-whatsapp"></i></a></li>
-                        <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <p>Copyright &copy; 2021 by AfgCode</p>
-            </div>
-        </footer>
+        <?php include('footer.php') ?>
+
+        <script>
+            function save_opt(value, qid){
+                alert(<?php echo $_SESSION['score']; ?>)
+                
+            }     
+        </script>
     </body>
 </body>
 </html>

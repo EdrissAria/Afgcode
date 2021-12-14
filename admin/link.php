@@ -16,7 +16,7 @@ if(isset($_POST["submit"])){
     $linkUrl = $_POST["lurl"];
     $image = $_FILES["image"]["name"];
     $author = $_SESSION["login"];
-    $target= "upload/".$_FILES["image"]["name"];
+    $target= "../upload/".$_FILES["image"]["name"];
 if(empty($linkName) || empty($linkUrl) || empty($image) || empty($linkOwner)){
     header("location: link.php?fill=false");
 }elseif(strlen($linkName)>50 && strlen($linkOwner)>50){
