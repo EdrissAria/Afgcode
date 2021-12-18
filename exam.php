@@ -2,8 +2,7 @@
 session_start(); 
 require_once("include/database.php");
 require_once("include/datetime.php");
-$cat = $_GET["catagory"];
- 
+$cat = $_GET["catagory"]; 
 ?>
 <!DOCTYPE html> 
 <html>
@@ -21,7 +20,7 @@ $cat = $_GET["catagory"];
     <div class="container">
        <div class="row">
             <div class="col-sm-8">
-            <form method="post">
+          
                 <?php
                     $query = "select * from questions where catagory = '$cat'";
                     $showQue = mysqli_query($link,$query);
@@ -38,8 +37,9 @@ $cat = $_GET["catagory"];
                 ?>
                 <div class="question-field">
                     <div class="question-title">
-                        <p>Question <?=$quenum;?> of 5</p>
+                        <p>Question <span id="current_que">0<span>/</span><span id="total_que">0</span></p>
                     </div>
+                    <div id="load_questions">
                     <div class="question">
                         <?=$question;?>
                     </div>
@@ -59,18 +59,16 @@ $cat = $_GET["catagory"];
                     <input type="radio" name="<?=$id;?>" value="<?=$option4;?>" id="<?=$option4;?>"
                     onclick="save_opt(this.value,<?php echo $id; ?>)"
                     ></div>
-                   
+                    </div>
+                </div>
+                <div class="buttons_group">
+                    <button class="previous" onclick="load_previous()">Previous</button>
+                    <button class="next" onclick="load_next()">Next</button>
                 </div>
                 <?php
                     }
-                ?>
-                <center>
-                <a href="blog.php" class="logout">&lArr;Log out</a>
-                <a href="result.php?catagory=<?php echo $cat ?>" class="finish">Finish &rArr;</a>
-                </center>
-                           
-             </form>  
-             <?php echo $_SESSION['score']; ?>
+                ?>  
+           
             </div>
           </div>
          </div> 
@@ -78,10 +76,49 @@ $cat = $_GET["catagory"];
         <?php include('footer.php') ?>
 
         <script>
-            function save_opt(value, qid){
-                alert(<?php echo $_SESSION['score']; ?>)
-                
+            function load_total_que(){
+                let xmlhttp = new XMLHttpRequest(); 
+                xmlhttp.onreadystatechange = function(){
+                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                        document.getElementById('total_que').innerHTML = xmlhttp.responseText; 
+                    }
+                }
+                xmlhttp.open('GET', 'ajax/load_total_que.php?catagory=<?php echo $cat ?>', true); 
+                xmlhttp.send(null); 
             }     
+            
+            var questionNo = '1'; 
+            load_questions(questionNo); 
+            function load_questions(questionNo){
+                document.getElementById('current_que').innerHTML = questionNo;
+                let total_que = document.getElementById('total_que').innerHTML; 
+
+                let xmlhttp = new XMLHttpRequest(); 
+                xmlhttp.onreadystatechange = function(){
+                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                        if(xmlhttp.responseText == "over"){
+                            window.location = 'result.php';
+                        }else{
+                            document.getElementById('total_que').innerHTML = xmlhttp.responseText; 
+                            load_total_que(); 
+                        }
+                    }
+                }
+                xmlhttp.open('GET', 'ajax/load_questions.php?catagory=<?php echo $cat ?>&qno='+questionNo, true); 
+                xmlhttp.send(null);
+            }
+
+            function load_previous(){
+                if(questionNo == '1'){
+                    load_questions(questionNo); 
+                }else{
+                    questionNo.parseInt(questionNo) - 1; 
+                }
+            }
+            function load_next(){
+                questionNo.parseInt(questionNo) + 1; 
+                load_questions(questionNo); 
+            }
         </script>
     </body>
 </body>
