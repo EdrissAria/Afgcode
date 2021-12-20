@@ -1,8 +1,12 @@
 <?php
-session_start(); 
+session_start();
 require_once("include/database.php");
 require_once("include/datetime.php");
-$cat = $_GET["catagory"]; 
+$cat = $_GET["catagory"];
+$_SESSION['score'] = 0;
+
+$total_que = mysqli_query($link, "SELECT * FROM questions WHERE catagory = '$cat'");
+$total = mysqli_num_rows($total_que);
 ?>
 <!DOCTYPE html> 
 <html>
@@ -20,7 +24,7 @@ $cat = $_GET["catagory"];
     <div class="container">
        <div class="row">
             <div class="col-sm-8">
-          
+            <form method="post">
                 <?php
                     $query = "select * from questions where catagory = '$cat'";
                     $showQue = mysqli_query($link,$query);
@@ -37,89 +41,47 @@ $cat = $_GET["catagory"];
                 ?>
                 <div class="question-field">
                     <div class="question-title">
-                        <p>Question <span id="current_que">0<span>/</span><span id="total_que">0</span></p>
+                        <p>Question <?=$quenum;?> of <?php echo $total; ?></p>
                     </div>
-                    <div id="load_questions">
                     <div class="question">
                         <?=$question;?>
                     </div>
                     <div class="option" id="option"><label for="<?=$option1;?>"><?=$option1;?></label>
-                    <input type="radio" name="<?=$id;?>" value="<?=$option1;?>" id="<?=$option1;?>"
-                    onclick="save_opt(this.value,<?php echo $id; ?>)"
-                    ></div>
+                    <input type="radio" name="<?php echo $id;?>" value="<?=$option1;?>" id="<?=$option1;?>"></div>
                     <div class="option" id="option"><label for="<?=$option2;?>"><?=$option2;?></label>
-                    <input type="radio" name="<?=$id;?>" value="<?=$option2;?>" id="<?=$option2;?>"
-                    onclick="save_opt(this.value,<?php echo $id; ?>)"
-                    ></div>
+                    <input type="radio" name="<?php echo $id;?>" value="<?=$option2;?>" id="<?=$option2;?>"></div>
                     <div class="option" id="option"><label for="<?=$option3;?>"><?=$option3;?></label>
-                    <input type="radio" name="<?=$id;?>" value="<?=$option3;?>" id="<?=$option3;?>"
-                    onclick="save_opt(this.value,<?php echo $id; ?>)"
-                    ></div>
+                    <input type="radio" name="<?php echo $id;?>" value="<?=$option3;?>" id="<?=$option3;?>"></div>
                     <div class="option" id="option"><label for="<?=$option4;?>"><?=$option4;?></label>
-                    <input type="radio" name="<?=$id;?>" value="<?=$option4;?>" id="<?=$option4;?>"
-                    onclick="save_opt(this.value,<?php echo $id; ?>)"
-                    ></div>
-                    </div>
-                </div>
-                <div class="buttons_group">
-                    <button class="previous" onclick="load_previous()">Previous</button>
-                    <button class="next" onclick="load_next()">Next</button>
+                    <input type="radio" name="<?php echo $id;?>" value="<?=$option4;?>" id="<?=$option4;?>"></div>
+                    <?php
+                    if(isset($_POST[$id])){
+                        if($_POST[$id] === $answer){
+                            $_SESSION['score'] ++; 
+                        }
+                    }
+                    ?>
                 </div>
                 <?php
                     }
-                ?>  
-           
+                ?>
+                <div class="buttons_group">
+                <a href="blog.php" class="logout">&lArr;Log out</a>
+                <input type="submit" name="submit" value="Finish &rArr;" class="finish">
+                </div>
+                <?php
+                    if(isset($_POST["submit"])){
+                        header("location:result.php?catagory=$cat");
+                    }
+
+                ?>            
+                        
+             </form>  
             </div>
           </div>
          </div> 
          <!----- main footer ----->
-        <?php include('footer.php') ?>
-
-        <script>
-            function load_total_que(){
-                let xmlhttp = new XMLHttpRequest(); 
-                xmlhttp.onreadystatechange = function(){
-                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                        document.getElementById('total_que').innerHTML = xmlhttp.responseText; 
-                    }
-                }
-                xmlhttp.open('GET', 'ajax/load_total_que.php?catagory=<?php echo $cat ?>', true); 
-                xmlhttp.send(null); 
-            }     
-            
-            var questionNo = '1'; 
-            load_questions(questionNo); 
-            function load_questions(questionNo){
-                document.getElementById('current_que').innerHTML = questionNo;
-                let total_que = document.getElementById('total_que').innerHTML; 
-
-                let xmlhttp = new XMLHttpRequest(); 
-                xmlhttp.onreadystatechange = function(){
-                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-                        if(xmlhttp.responseText == "over"){
-                            window.location = 'result.php';
-                        }else{
-                            document.getElementById('total_que').innerHTML = xmlhttp.responseText; 
-                            load_total_que(); 
-                        }
-                    }
-                }
-                xmlhttp.open('GET', 'ajax/load_questions.php?catagory=<?php echo $cat ?>&qno='+questionNo, true); 
-                xmlhttp.send(null);
-            }
-
-            function load_previous(){
-                if(questionNo == '1'){
-                    load_questions(questionNo); 
-                }else{
-                    questionNo.parseInt(questionNo) - 1; 
-                }
-            }
-            function load_next(){
-                questionNo.parseInt(questionNo) + 1; 
-                load_questions(questionNo); 
-            }
-        </script>
+         <?php include('footer.php'); ?>
     </body>
 </body>
 </html>
