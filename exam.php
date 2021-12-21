@@ -26,6 +26,7 @@ $total = mysqli_num_rows($total_que);
             <div class="col-sm-8">
             <form method="post">
                 <?php
+                if($total > 9){
                     $query = "select * from questions where catagory = '$cat'";
                     $showQue = mysqli_query($link,$query);
                     $quenum = 0;
@@ -64,24 +65,23 @@ $total = mysqli_num_rows($total_que);
                 </div>
                 <?php
                     }
+                }else{
+                        echo "<h1 class='result_header'>There is no question yet for this exam!</h1>"; 
+                    }
                 ?>
                 <div class="buttons_group">
                 <a href="blog.php" class="logout">&lArr;Log out</a>
-                <input type="submit" name="submit" value="Finish &rArr;" class="finish">
+                <?php echo $total > 9 ?'<input type="submit" name="submit" value="Finish &rArr;" class="finish">':null?>
                 </div>
                 <?php
                     if(isset($_POST["submit"])){
                         header("location:result.php?catagory=$cat");
                     }
-
-                ?>            
-                        
+                ?>               
              </form>  
             </div>
           </div>
          </div> 
-         <!----- main footer ----->
-         <?php include('footer.php'); ?>
     </body>
 </body>
 </html>

@@ -64,24 +64,24 @@ if(isset($_GET["search"])){
                 </div>
                 <div class="row">
                     <div class="col span-1-of-2">
-                        <a href="#"><div class="card first">
+                        <a href="blog.php?course=html"><div class="card first">
                              <h1>HTML</h1>
                         </div></a>
                     </div>
                     <div class="col span-1-of-2">
-                        <a href="#"><div class="card second">
+                        <a href="blog.php?course=css"><div class="card second">
                              <h1>CSS</h1>
                         </div></a>
                     </div>
                 </div>
                 <div class="row">
                         <div class="col span-1-of-2">
-                            <a href="#"><div class="card third">
+                            <a href="blog.php?course=javascript"><div class="card third">
                                  <h1>JavaScript</h1>
                             </div></a>
                         </div>
                         <div class="col span-1-of-2">
-                            <a href="#"><div class="card fourth">
+                            <a href="blog.php?course=php"><div class="card fourth">
                                 <h1>PHP</h1>
                             </div></a>
                         </div>

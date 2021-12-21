@@ -325,6 +325,15 @@
     .contact-card p{
         font-size: 120%;
     }
+    .tag{
+        text-decoration: none;
+        color: white;
+        font-size: 60%;
+        padding: 5px 15px;
+        background-color: rgb(179, 179, 179);
+        border-radius: 20px;
+        margin-right: 10px;
+    }
     #success{
     font-size: 100%;
     padding: 10px 0;

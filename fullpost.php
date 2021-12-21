@@ -65,7 +65,7 @@ if(empty($username) || empty($email) || empty($comment)){
                     <!----- tags bar ----->
                     <div class="row">
                        <div class="col span-12-of-12">
-                            <div class="comment">
+                            <div class="tags">
                             <?php 
                                 $showtags = mysqli_query($link, "SELECT * FROM tags;");
                                 while($rowtag = mysqli_fetch_assoc($showtags)){

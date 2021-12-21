@@ -9,12 +9,17 @@ require_once("include/datetime.php");
                 <div class="col span-8-of-12 side">
                 <!----- php code for posts ----->
                 <?php
+                    
                     if(isset($_GET["search"])){
                           $search = $_GET["search"];
                           if($search != ""){
                           $query = "SELECT * FROM posts where createAt LIKE '%$search%' OR title LIKE '%$search%' OR post LIKE '%$search%' OR catagory LIKE '%$search%' ORDER BY pid desc;";
                           $showPosts = mysqli_query($link, $query);
-                         }
+                    }elseif(isset($_GET['catagory'])){
+                        $catagory = $_GET['catagory'];
+                        $query = "SELECT * FROM posts where catagory = '$catagory' ORDER BY pid desc;";
+                        $showPosts = mysqli_query($link, $query);
+                    }
                     }else{
                         $query = "SELECT * FROM posts order by pid desc;";
                         $showPosts = mysqli_query($link, $query);
@@ -50,7 +55,7 @@ require_once("include/datetime.php");
                     <!----- biography ----->
                         <div class="biography">
                             <img src="image/bishak.jpg">
-                            <p>I'm M.Edriss Alokozay I love Computer Scince major, I'm intersted in programming and web developing.</p>
+                            <p>I'm M.Edriss Aria I love Computer Scince major, I'm intersted in programming and web developing.</p>
                         </div>
                         <!----- Quiz bar ----->
                         <div class="quiz-bar">

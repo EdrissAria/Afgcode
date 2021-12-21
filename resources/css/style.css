@@ -963,7 +963,13 @@ h3{
     color: white;
     font-size: 100%;
     padding: 5px 15px;
-    background-color: rgb(212, 212, 212);
+    background-color: rgb(179, 179, 179);
     border-radius: 20px;
     margin-right: 10px;
+}
+.tags{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
